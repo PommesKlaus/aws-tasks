@@ -9,6 +9,23 @@
 # production
 /build
 
+# Amplify Files
+.amplifyrc
+/amplify/\#current-cloud-backend
+/amplify/.config
+/amplify/backend/amplify-meta.json
+/amplify/backend/function/*/dist
+/amplify/backend/function/*/src/node_modules
+src/aws-exports.js
+amplify/backend/hosting/S3AndCloudFront/template.json
+amplify/backend/function/awstaskse5b582e5/awstaskse5b582e5-cloudformation-template.json
+amplify/backend/awscloudformation/nested-cloudformation-stack.yml
+amplify/backend/auth/cognitoa0ceb0fd/parameters.json
+amplify/backend/auth/cognitoa0ceb0fd/cognitoa0ceb0fd-cloudformation-template.yml
+amplify/backend/api/tasks/tasks-cloudformation-template.json
+amplify/backend/api/tasks/api-params.json
+
+
 # misc
 .DS_Store
 .env.local
