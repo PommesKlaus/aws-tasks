@@ -11,12 +11,9 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import RedoIcon from "@material-ui/icons/Redo";
 import EditIcon from "@material-ui/icons/Edit";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ReactMarkdown from "react-markdown";
 import { categoryDefinitions, tasksGroups } from "../helper/definitions";
 
 const styles = theme => ({
@@ -40,6 +37,15 @@ const styles = theme => ({
   },
   typographyCategory: {
     paddingLeft: 12
+  },
+  description: {
+    color: "rgba(0, 0, 0, 0.87)",
+    fontSize: "0.875rem",
+    lineHeight: "1.5",
+    letterSpacing: "0.01071em",
+    "& ul": {
+      paddingLeft: 15
+    }
   }
 });
 
@@ -128,24 +134,10 @@ class TaskItem extends React.Component {
             </div>
           </CardActions>
           <CardContent>
-            <Typography paragraph>{this.props.task.description}</Typography>
-            {this.props.task.subtasks.map((subtask, idx) => (
-              <ExpansionPanel key={this.props.task.taskId + idx}>
-                <ExpansionPanelSummary
-                  expandIcon={
-                    !subtask.description ||
-                    subtask.description === "" ? null : (
-                      <ExpandMoreIcon />
-                    )
-                  }
-                >
-                  <Typography>{subtask.title}</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  <Typography>{subtask.description}</Typography>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-            ))}
+            <ReactMarkdown
+              source={this.props.task.description}
+              className={classes.description}
+            />
           </CardContent>
         </Collapse>
       </Card>

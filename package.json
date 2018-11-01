@@ -9,6 +9,7 @@
     "aws-amplify-react": "^2.1.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-markdown": "^4.0.3",
     "react-scripts": "2.0.5",
     "typeface-roboto": "^0.0.54"
   },

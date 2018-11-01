@@ -19,5 +19,7 @@ export const categoryDefinitions = {
   BP: { color: "#2196f3", text: "Betriebsprüfung" },
   TR: { color: "#f44336", text: "Steuererklärung" },
   A: { color: "#ffc107", text: "Admin" },
-  Q: { color: "#33c9dc", text: "Anfragen" }
+  Q: { color: "#33c9dc", text: "Anfragen" },
+  TP: { color: "#00a152", text: "Verrechnungspreise" },
+  R: { color: "#9500ae", text: "Reporting" },
 };
